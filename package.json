@@ -9,9 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.1.0",
+    "@fontsource/rajdhani": "^5.1.0",
+    "@tabler/icons-webfont": "^3.30.0",
     "vue": "^3.5.42"
   },
   "devDependencies": {
+    "@types/firefox-webext-browser": "^120.0.4",
     "@types/node": "^24.13.3",
     "@vitejs/plugin-vue": "^6.0.8",
     "@vue/tsconfig": "^0.9.1",

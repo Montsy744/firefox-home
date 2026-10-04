@@ -13,6 +13,7 @@ body,
 
 body {
   min-height: 100vh;
+  background-color: #000;
 
   font-family:
     Inter,
@@ -21,4 +22,33 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+}
+
+.glass {
+  position: relative;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),  /* reflet sur le bord haut */
+    0 8px 32px rgba(0, 0, 0, 0.25);           /* ombre portée */
+}
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;               /* épaisseur du bord */
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0.05) 40%,
+    rgba(255, 255, 255, 0.05) 60%,
+    rgba(255, 255, 255, 0.3)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;    /* ne garde que l'anneau, pas le centre */
+  pointer-events: none;
 }
