@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <HelloWorld />
+  <main>
+    <h1>Firefox Home</h1>
+    <p>Ça fonctionne 🚀</p>
+  </main>
 </template>
