@@ -1,0 +1,12 @@
+:root {
+  /* FONT */
+  --font-ui: system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+
+  /* COLOR */
+  --color-accent: #f4b26a;
+  --color-surface: rgba(243, 230, 211, 0.08);
+  --color-border: rgba(243, 230, 211, 0.16);
+  --color-text: #f3e6d3;
+  --color-muted: #b9a9c9;
+}

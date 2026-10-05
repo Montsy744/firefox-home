@@ -19,7 +19,6 @@ Le projet est encore en développement.
 * [ ] Barre de recherche
 * [ ] Raccourcis personnalisables
 * [ ] Thème clair / sombre
-* [ ] Fond personnalisable
 * [ ] Animations et transitions
 
 ### 🔗 Services externes
