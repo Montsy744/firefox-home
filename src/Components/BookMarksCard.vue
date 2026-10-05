@@ -48,7 +48,8 @@ const redirectURL = () => {
   filter: drop-shadow(0 4px 12px var(--color-text));
 }
 
-.bookmark_card_container_label {
+.bookmark_card_container_label h1 {
     color: var(--color-text);
+    font-family: var(--font-mono);
 }
 </style>

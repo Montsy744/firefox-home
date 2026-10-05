@@ -17,8 +17,12 @@ const bg = new URL(bg_url, import.meta.url).href;
         :bookmark="item"
       />
     </div>
-    <div>
-      <SearchBar />
+    <div class="hud_main_container">
+      <div>
+        <SearchBar class="SearchBar"/>
+      </div>
+      <div></div>
+    
     </div>
   </main>
 </template>
@@ -41,5 +45,14 @@ const bg = new URL(bg_url, import.meta.url).href;
   justify-content: center;
   flex-direction: row;
   align-items: center;
+}
+
+.hud_main_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.SearchBar {
+  margin: 0 100px;
 }
 </style>
