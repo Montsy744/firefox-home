@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BookMarksCard from "./Components/BookMarksCard.vue";
 import SearchBar from "./Components/SearchBar.vue";
+import WeatherCard from "./Components/WeatherCard.vue";
 import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
 import { bg_url } from "./utils/Constant.js";
 
@@ -18,7 +19,11 @@ const bg = new URL(bg_url, import.meta.url).href;
       />
     </div>
     <div class="hud_main_container">
-      <div>
+      <div class="hud_main_container_rigth">
+        <div class="weather">
+          <WeatherCard />
+        </div>
+      
         <SearchBar class="SearchBar"/>
       </div>
       <div></div>
@@ -52,7 +57,12 @@ const bg = new URL(bg_url, import.meta.url).href;
   grid-template-columns: 1fr 1fr;
 }
 
-.SearchBar {
-  margin: 0 100px;
+.hud_main_container_rigth {
+  margin: 0 20px 0 100px;
+}
+
+.weather {
+  margin: 50px 0 20px 0;
+  display: flex;
 }
 </style>

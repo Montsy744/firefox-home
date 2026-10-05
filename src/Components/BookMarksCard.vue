@@ -4,7 +4,7 @@
       <img :src="bookmark.url_img" :alt="bookmark.label" />
     </div>
     <div class="bookmark_card_container_label">
-      <h1>{{ bookmark.label }}</h1>
+      <h3>{{ bookmark.label }}</h3>
     </div>
   </div>
 </template>
@@ -48,7 +48,7 @@ const redirectURL = () => {
   filter: drop-shadow(0 4px 12px var(--color-text));
 }
 
-.bookmark_card_container_label h1 {
+.bookmark_card_container_label h3 {
     color: var(--color-text);
     font-family: var(--font-mono);
 }
