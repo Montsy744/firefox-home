@@ -4,9 +4,6 @@ import BookMarksCard from "./Components/BookMarksCard.vue";
 import SearchBar from "./Components/SearchBar.vue";
 import WeatherCard from "./Components/WeatherCard.vue";
 import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
-import { bg_url } from "./utils/Constant.js";
-
-const bg = new URL(bg_url, import.meta.url).href;
 </script>
 
 <template>
