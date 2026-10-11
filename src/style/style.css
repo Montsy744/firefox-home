@@ -40,22 +40,3 @@ body {
   border-color: var(--_accent);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--_accent) 25%, transparent);
 }
-
-.glass::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  padding: 1px;              
-  border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.55),
-    rgba(255, 255, 255, 0.05) 40%,
-    rgba(255, 255, 255, 0.05) 60%,
-    rgba(255, 255, 255, 0.3)
-  );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude; 
-  pointer-events: none;
-}

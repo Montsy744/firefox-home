@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import StarField from "./Components/background/StarField.vue";
 import BookMarksCard from "./Components/BookMarksCard.vue";
 import SearchBar from "./Components/SearchBar.vue";
 import WeatherCard from "./Components/WeatherCard.vue";
@@ -9,7 +10,7 @@ const bg = new URL(bg_url, import.meta.url).href;
 </script>
 
 <template>
-  <div class="bg" :style="{ backgroundImage: `url(${bg})` }" />
+  <StarField />
   <main class="hud">
     <div class="hud_header_container">
       <BookMarksCard
@@ -39,7 +40,6 @@ const bg = new URL(bg_url, import.meta.url).href;
   z-index: -1;
   background-size: cover;
   background-position: center;
-  /*filter: blur(6px) brightness(0.7);*/
 }
 
 .hud_header_container {
