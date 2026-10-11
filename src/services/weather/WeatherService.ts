@@ -1,6 +1,7 @@
-import { readCache, writeCache } from "../composables/useWeather"
-import { Coords } from "../Types/Coord"
-import { CITY_TTL } from "../utils/WeatherUtils"
+import { readCache, writeCache } from "../../composables/useWeather"
+import { Coords } from "../../Types/Coord"
+import { CITY_TTL } from "../../utils/WeatherUtils"
+
 
 async function fetchWeather({ latitude, longitude }: Coords) {
   const url = new URL('https://api.open-meteo.com/v1/forecast')

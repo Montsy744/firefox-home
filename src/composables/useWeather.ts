@@ -1,7 +1,8 @@
 import { onMounted, ref } from "vue"
-import { fetchCity, fetchWeather } from "../services/WeatherService"
+
 import { Coords } from "../Types/Coord"
 import { COORDS_TTL, DEFAULT_COORDS, Weather, WEATHER_TTL } from "../utils/WeatherUtils"
+import { fetchCity, fetchWeather } from "../services/weather/WeatherService"
 
 export function readCache<T>(key: string, ttl: number): T | null {
   try {

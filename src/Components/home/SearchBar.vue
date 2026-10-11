@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
-import { SHORTCUTS } from '../utils/Shortcut'
+import { SHORTCUTS } from '../../utils/Shortcut';
+
 
 withDefaults(defineProps<{ placeholder?: string }>(), {
   placeholder: 'chercher quelque chose…',

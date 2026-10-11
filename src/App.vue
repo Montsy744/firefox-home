@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import StarField from "./Components/background/StarField.vue";
-import BookMarksCard from "./Components/BookMarksCard.vue";
-import SearchBar from "./Components/SearchBar.vue";
-import WeatherCard from "./Components/WeatherCard.vue";
+import SearchBar from "./Components/home/SearchBar.vue";
+import BookMarksCard from "./Components/home/BookMarksCard.vue";
+import WeatherCard from "./Components/weather/WeatherCard.vue";
 import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
 </script>
 

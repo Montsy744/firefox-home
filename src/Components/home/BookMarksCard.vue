@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { Bookmarks } from "../utils/BookMarks";
+import { Bookmarks } from '../../utils/BookMarks';
 
 const prop = defineProps<{
   bookmark: Bookmarks;
