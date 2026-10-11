@@ -4,7 +4,7 @@
       <img :src="bookmark.url_img" :alt="bookmark.label" />
     </div>
     <div class="bookmark_card_container_label">
-      <h3>{{ bookmark.label }}</h3>
+      <h3>{{ bookmark.label.toUpperCase() }}</h3>
     </div>
   </div>
 </template>

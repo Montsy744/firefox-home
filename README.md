@@ -294,7 +294,7 @@ L'idée est de pouvoir ouvrir un nouvel onglet et retrouver immédiatement :
 
 
     ┌─────────────────┐   ┌─────────────────┐
-    │ 🔔 NOTIFICATIONS│   │ 🎵 SPOTIFY      │
+    │  NOTIFICATIONS  │   │    SPOTIFY      │
     │                 │   │                 │
     │ GitHub      3   │   │ Now playing...  │
     │ Discord     2   │   │                 │
