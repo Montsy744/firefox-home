@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from "vue";
 
+
+// redifine random for sonarQube check
+const buf = new Uint32Array(256);
+let idx = buf.length;
+
+function random(): number {
+  if (idx >= buf.length) {
+    crypto.getRandomValues(buf);
+    idx = 0;
+  }
+  return buf[idx++] / 4294967296; 
+}
+
 const props = withDefaults(
   defineProps<{
     count?: number; // nombre d'étoiles
@@ -15,7 +28,7 @@ const canvas = ref<HTMLCanvasElement | null>(null);
 
 const TAU = Math.PI * 2;
 const NEAR = 0.02;
-const rand = (a: number, b: number) => a + Math.random() * (b - a);
+const rand = (a: number, b: number) => a + random() * (b - a);
 
 type Star = { x: number; y: number; z: number; hue: number };
 type Rocket = {
@@ -32,7 +45,7 @@ type Particle = { x: number; y: number; vx: number; vy: number; life: number; ma
 let ctx: CanvasRenderingContext2D | null = null;
 let stars: Star[] = [];
 let particles: Particle[] = [];
-let rocket: Rocket | null = null;
+let activeRocket: Rocket | null = null;
 
 let raf = 0;
 let last = 0;
@@ -45,10 +58,10 @@ let tRocket = 6;
 
 function makeStar(randomZ = true): Star {
   return {
-    x: Math.random() * 2 - 1,
-    y: Math.random() * 2 - 1,
-    z: randomZ ? Math.random() : 1,
-    hue: Math.random() < 0.15 ? 30 + Math.random() * 20 : 200 + Math.random() * 40,
+    x: random() * 2 - 1,
+    y: random() * 2 - 1,
+    z: randomZ ? random() : 1,
+    hue: random() < 0.15 ? 30 + random() * 20 : 200 + random() * 40,
   };
 }
 
@@ -111,8 +124,8 @@ function drawStars(c: CanvasRenderingContext2D, dt: number) {
 }
 
 function spawnRocket() {
-  const fromLeft = Math.random() < 0.5;
-  rocket = {
+  const fromLeft = random() < 0.5;
+  activeRocket = {
     t: 0,
     dur: rand(9, 13),
     x0: fromLeft ? -80 : w + 80,
@@ -124,7 +137,7 @@ function spawnRocket() {
 }
 
 function drawRocketShape(c: CanvasRenderingContext2D) {
-  const flick = 1 + Math.sin(time * 40) * 0.15 + Math.random() * 0.1;
+  const flick = 1 + Math.sin(time * 40) * 0.15 + random() * 0.1;
   const L = 22 * flick;
 
   const fg = c.createLinearGradient(0, 22, 0, 22 + L * 1.6);
@@ -203,12 +216,12 @@ function updateDrawRocket(c: CanvasRenderingContext2D, dt: number) {
     c.fill();
   }
 
-  if (!rocket) return;
-  const r = rocket;
+  if (!activeRocket) return;
+  const r = activeRocket;
   r.t += dt;
   const p = r.t / r.dur;
   if (p >= 1) {
-    rocket = null;
+    activeRocket = null;
     return;
   }
 
@@ -252,7 +265,7 @@ function frame(now: number) {
   if (props.rocket) {
     tRocket -= dt;
     if (tRocket <= 0) {
-      if (!rocket) spawnRocket();
+      if (!activeRocket) spawnRocket();
       tRocket = rand(20, 35);
     }
     updateDrawRocket(c, dt);
