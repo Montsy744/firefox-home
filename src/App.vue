@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import StarField from "./Components/background/StarField.vue";
-import BookMarksCard from "./Components/BookMarksCard.vue";
-import SearchBar from "./Components/SearchBar.vue";
-import WeatherCard from "./Components/WeatherCard.vue";
+import SearchBar from "./Components/home/SearchBar.vue";
+import BookMarksCard from "./Components/home/BookMarksCard.vue";
+import WeatherCard from "./Components/weather/WeatherCard.vue";
+import OneImgPerDayCard from "./Components/nasa/OneImgPerDayCard.vue";
 import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
 </script>
 
@@ -17,14 +18,18 @@ import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
       />
     </div>
     <div class="hud_main_container">
-      <div class="hud_main_container_rigth">
+      <div class="hud_main_container_left">
         <div class="weather">
           <WeatherCard />
         </div>
       
         <SearchBar class="SearchBar"/>
       </div>
-      <div></div>
+      <div class="hud_main_container_rigth">
+        <div class="nasa_picture">
+          <OneImgPerDayCard />
+        </div>
+      </div>
     
     </div>
   </main>
@@ -52,10 +57,14 @@ import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
 .hud_main_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
 }
 
-.hud_main_container_rigth {
+.hud_main_container_left {
   margin: 0 20px 0 100px;
+}
+.hud_main_container_rigth {
+  padding: 20px;
 }
 
 .weather {

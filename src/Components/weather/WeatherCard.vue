@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useWeather } from "../composables/useWeather";
+import { useWeather } from '../../composables/useWeather';
 
 const { weather, error, loading } = useWeather();
 </script>
