@@ -23,7 +23,7 @@
 import { onMounted, ref } from "vue";
 import { Apod } from "../../Types/nasa/apod";
 import { get_picture_of_the_day } from "../../services/nasa/apodService";
-import ApodSkeleton from "./ApodSkeleton.vue";
+import ApodSkeleton from "../skeleton/ApodSkeleton.vue";
 
 const isLoading = ref(true);
 const isError = ref(false);
