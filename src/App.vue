@@ -4,7 +4,8 @@ import SearchBar from "./Components/home/SearchBar.vue";
 import BookMarksCard from "./Components/home/BookMarksCard.vue";
 import WeatherCard from "./Components/weather/WeatherCard.vue";
 import OneImgPerDayCard from "./Components/nasa/OneImgPerDayCard.vue";
-import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
+import BookMarksPersoCard from "./Components/home/BookMarksPersoCard.vue";
+import { BOOKMARKS_PERSO, BOOKMARKS_PRO } from "./utils/BookMarks.js";
 </script>
 
 <template>
@@ -13,12 +14,12 @@ import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
     <div class="hud_header_container">
       <h2 class="categorie">Raccourcis Pro</h2>
 
-      <div class="hud_header_container_bokk_marks">
+      <div class="hud_header_container_book_marks">
         <BookMarksCard
           v-for="(item, index) in BOOKMARKS_PRO"
           :key="index"
           :bookmark="item"
-        /> 
+        />
       </div>
     </div>
     <div class="hud_main_container">
@@ -28,6 +29,17 @@ import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
         </div>
 
         <SearchBar class="SearchBar" />
+
+        <div class="hud_main_container_left_bookMarks_perso">
+          <h2 class="categorie">Raccourcis Perso</h2>
+          <div class="hud_header_container_book_marks_perso">
+            <BookMarksPersoCard
+              v-for="(item, index) in BOOKMARKS_PERSO"
+              :key="index"
+              :bookmark="item"
+            />
+          </div>
+        </div>
       </div>
       <div class="hud_main_container_rigth">
         <div class="nasa_picture">
@@ -56,34 +68,42 @@ import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
   justify-content: center;
   flex-direction: column;
 
-  padding: 0 5rem;
+  margin-left: 5rem;
 }
 
-
-
-.hud_header_container_bokk_marks {
+.hud_header_container_book_marks {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
 .hud_main_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 80vh;
+  max-height: 80vh;
+  margin-left: 5rem;
 }
 
 .hud_main_container_left {
-  margin: 0 20px 0 100px;
+  margin: 0 20px 0 0;
 }
 .hud_main_container_rigth {
   padding: 20px;
 }
 
 .weather {
-  margin: 50px 0 20px 0;
+  margin: 10px 0 20px 0;
   display: flex;
+}
+
+.hud_main_container_left_bookMarks_perso {
+  margin-top: 20px;
+}
+
+.hud_header_container_book_marks_perso {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .categorie {
