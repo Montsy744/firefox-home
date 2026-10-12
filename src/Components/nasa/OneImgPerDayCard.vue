@@ -92,6 +92,7 @@ onMounted(async () => {
 .apod_desc p {
   margin: 0;
   font-family: var(--font-mono);
+  text-align: justify;
 }
 
 .apod_desc :deep(a) {
