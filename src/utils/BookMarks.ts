@@ -11,14 +11,14 @@ const BOOKMARKS_PRO : Bookmarks[] = [
         url_redirection: "https://github.com/",
     },
     {
-        label: "LinkedIn",
-        url_img: "./../public/asset/icon/Linkedin.png",
-        url_redirection: "https://www.linkedin.com/feed/",
-    },
-    {
         label: "GitLab",
         url_img: "./../public/asset/icon/gitlab.png",
         url_redirection: "https://gitlab.univ-lille.fr/hugo.straseele.etu",
+    },
+    {
+        label: "LinkedIn",
+        url_img: "./../public/asset/icon/Linkedin.png",
+        url_redirection: "https://www.linkedin.com/feed/",
     },
     {
         label: "Gmail",
@@ -28,7 +28,12 @@ const BOOKMARKS_PRO : Bookmarks[] = [
     {
         label: "Agenda",
         url_img: "./../public/asset/icon/agenda.png",
-        url_redirection: "",
+        url_redirection: "https://calendar.google.com/calendar",
+    },
+    {
+        label: "Wakatime",
+        url_img: "./../public/asset/icon/wakatime.png",
+        url_redirection: "https://wakatime.com/dashboard",
     },
     {
         label: "Portfolio",

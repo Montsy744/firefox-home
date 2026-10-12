@@ -11,26 +11,29 @@ import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
   <StarField />
   <main class="hud">
     <div class="hud_header_container">
-      <BookMarksCard
-        v-for="(item, index) in BOOKMARKS_PRO"
-        :key="index"
-        :bookmark="item"
-      />
+      <h2 class="categorie">Raccourcis Pro</h2>
+
+      <div class="hud_header_container_bokk_marks">
+        <BookMarksCard
+          v-for="(item, index) in BOOKMARKS_PRO"
+          :key="index"
+          :bookmark="item"
+        /> 
+      </div>
     </div>
     <div class="hud_main_container">
       <div class="hud_main_container_left">
         <div class="weather">
           <WeatherCard />
         </div>
-      
-        <SearchBar class="SearchBar"/>
+
+        <SearchBar class="SearchBar" />
       </div>
       <div class="hud_main_container_rigth">
         <div class="nasa_picture">
           <OneImgPerDayCard />
         </div>
       </div>
-    
     </div>
   </main>
 </template>
@@ -46,13 +49,24 @@ import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
 
 .hud_header_container {
   width: 100%;
+  max-width: 100vw;
   min-height: 20vh;
 
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
+
+  padding: 0 5rem;
+}
+
+
+
+.hud_header_container_bokk_marks {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
+
 
 .hud_main_container {
   display: grid;
@@ -70,5 +84,19 @@ import { BOOKMARKS_PRO } from "./utils/BookMarks.js";
 .weather {
   margin: 50px 0 20px 0;
   display: flex;
+}
+
+.categorie {
+  color: var(--color-muted);
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+}
+.categorie::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1px;
+  margin-bottom: 6px;
+  background: currentColor;
 }
 </style>

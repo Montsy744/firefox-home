@@ -77,10 +77,12 @@ const { weather, error, loading } = useWeather();
   margin-top: 4px !important;
   font-size: 15px;
   font-weight: 500;
+  font-family: var(--font-mono);
 }
 
 .weather__meta,
 .weather__status {
+  font-family: var(--font-mono);
   font-size: 12.5px;
   color: var(--muted, #b9a9c9);
 }
@@ -90,6 +92,7 @@ const { weather, error, loading } = useWeather();
 }
 
 .weather__place {
+  font-family: var(--font-ui);
   font-size: 16px;
   color: var(--muted, #b9a9c9);
   margin-top: 6px !important;
