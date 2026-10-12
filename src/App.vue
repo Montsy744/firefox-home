@@ -6,6 +6,7 @@ import WeatherCard from "./Components/weather/WeatherCard.vue";
 import OneImgPerDayCard from "./Components/nasa/OneImgPerDayCard.vue";
 import BookMarksPersoCard from "./Components/home/BookMarksPersoCard.vue";
 import { BOOKMARKS_PERSO, BOOKMARKS_PRO } from "./utils/BookMarks.js";
+import CalendarWidget from "./Components/calendar/CalendarWidget.vue";
 </script>
 
 <template>
@@ -44,6 +45,11 @@ import { BOOKMARKS_PERSO, BOOKMARKS_PRO } from "./utils/BookMarks.js";
       <div class="hud_main_container_rigth">
         <div class="nasa_picture">
           <OneImgPerDayCard />
+        </div>
+        <div class="calendar_container">
+          <div class="today_calendar">
+            <CalendarWidget />
+          </div>
         </div>
       </div>
     </div>
@@ -118,5 +124,11 @@ import { BOOKMARKS_PERSO, BOOKMARKS_PRO } from "./utils/BookMarks.js";
   height: 1px;
   margin-bottom: 6px;
   background: currentColor;
+}
+.calendar_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 2rem;
 }
 </style>

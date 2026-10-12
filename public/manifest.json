@@ -5,5 +5,12 @@
   "description": "Page d'accueil Firefox personnalisée",
   "chrome_url_overrides": {
     "newtab": "index.html"
-  }
+  },
+  "permissions": ["identity", "storage"],
+  "host_permissions": [
+    "https://www.googleapis.com/*"
+  ],
+  "browser_specific_settings": {
+  "gecko": { "id": "newtab@Montsy744.dev" }
+}
 }
