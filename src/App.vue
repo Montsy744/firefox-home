@@ -7,6 +7,7 @@ import OneImgPerDayCard from "./Components/nasa/OneImgPerDayCard.vue";
 import BookMarksPersoCard from "./Components/home/BookMarksPersoCard.vue";
 import { BOOKMARKS_PERSO, BOOKMARKS_PRO } from "./utils/BookMarks.js";
 import CalendarWidget from "./Components/calendar/CalendarWidget.vue";
+import GmailWidget from "./Components/gmail/GmailWidget.vue";
 </script>
 
 <template>
@@ -50,6 +51,9 @@ import CalendarWidget from "./Components/calendar/CalendarWidget.vue";
           <div class="today_calendar">
             <CalendarWidget />
           </div>
+          <div class="unread_mails">
+            <GmailWidget />
+          </div>
         </div>
       </div>
     </div>
@@ -57,6 +61,14 @@ import CalendarWidget from "./Components/calendar/CalendarWidget.vue";
 </template>
 
 <style scoped>
+
+.hud {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
 .bg {
   position: fixed;
   inset: -40px;
@@ -67,14 +79,12 @@ import CalendarWidget from "./Components/calendar/CalendarWidget.vue";
 
 .hud_header_container {
   width: 100%;
-  max-width: 100vw;
   min-height: 20vh;
-
   display: flex;
   justify-content: center;
   flex-direction: column;
-
-  margin-left: 5rem;
+  padding-left: 5rem;
+  box-sizing: border-box;
 }
 
 .hud_header_container_book_marks {
@@ -88,14 +98,18 @@ import CalendarWidget from "./Components/calendar/CalendarWidget.vue";
   grid-template-columns: 1fr 1fr;
   min-height: 80vh;
   max-height: 80vh;
-  margin-left: 5rem;
+  padding-left: 5rem;
+  box-sizing: border-box;
 }
 
 .hud_main_container_left {
   margin: 0 20px 0 0;
+  min-width: 0;
 }
+
 .hud_main_container_rigth {
   padding: 20px;
+  min-width: 0;
 }
 
 .weather {
@@ -117,6 +131,7 @@ import CalendarWidget from "./Components/calendar/CalendarWidget.vue";
   font-family: var(--font-ui);
   font-size: 0.95rem;
 }
+
 .categorie::before {
   content: "";
   display: block;
@@ -125,6 +140,7 @@ import CalendarWidget from "./Components/calendar/CalendarWidget.vue";
   margin-bottom: 6px;
   background: currentColor;
 }
+
 .calendar_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
